@@ -38,8 +38,8 @@ class MoviesController < ApplicationController
     end
 
     Movie.find(:all, :order => @sorting ? @sorting : :id).each do |mp|
-      if @ratings.keys.include? mp[:rating] #if movie has correct rating
-        (@movies ||= [ ]) << mp #push mp to movies hash 
+      if @ratings.keys.include? mp[:rating]
+        (@movies ||= [ ]) << mp 
       end
     end
     
